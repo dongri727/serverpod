@@ -59,6 +59,7 @@ class SignInWithEmailDialogState extends State<SignInWithEmailDialog> {
   _Page _page = _Page.createAccount;
 
   bool _enabled = true;
+  bool _isObscure = true;
 
   @override
   void initState() {
@@ -105,11 +106,21 @@ class SignInWithEmailDialogState extends State<SignInWithEmailDialog> {
         TextField(
           enabled: _enabled,
           controller: _passwordController,
-          obscureText: true,
+          //switch show/hide password
+          obscureText: _isObscure,
           decoration: InputDecoration(
             hintText: 'Password',
             helperText: ' ',
             errorText: _passwordIssue,
+            //adds icon for swich
+            suffixIcon: IconButton(
+              icon: Icon(_isObscure ? Icons.visibility_off : Icons.visibility),
+              onPressed: () {
+                setState(() {
+                  _isObscure = !_isObscure;
+                });
+              },
+              )
           ),
           onChanged: (_) {
             setState(() {
@@ -155,11 +166,21 @@ class SignInWithEmailDialogState extends State<SignInWithEmailDialog> {
         TextField(
           enabled: _enabled,
           controller: _passwordController,
-          obscureText: true,
+          //switch show/hide password
+          obscureText: _isObscure,
           decoration: InputDecoration(
             hintText: 'Password',
             helperText: ' ',
             errorText: _passwordIssue,
+            //adds icon for swich
+            suffixIcon: IconButton(
+              icon: Icon(_isObscure ? Icons.visibility_off : Icons.visibility),
+              onPressed: () {
+                setState(() {
+                  _isObscure = !_isObscure;
+                });
+              },
+              )
           ),
           onChanged: (_) {
             setState(() {
@@ -302,11 +323,21 @@ class SignInWithEmailDialogState extends State<SignInWithEmailDialog> {
           enabled: _enabled,
           maxLength: widget.maxPasswordLength,
           controller: _passwordController,
-          obscureText: true,
+          //switch show/hide password
+          obscureText: _isObscure,
           decoration: InputDecoration(
             hintText: 'New password',
             helperText: ' ',
             errorText: _passwordIssue,
+            //adds icon for swich
+            suffixIcon: IconButton(
+              icon: Icon(_isObscure ? Icons.visibility_off : Icons.visibility),
+              onPressed: () {
+                setState(() {
+                  _isObscure = !_isObscure;
+                });
+              },
+              )
           ),
           onChanged: (_) {
             setState(() {
