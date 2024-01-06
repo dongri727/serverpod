@@ -59,6 +59,7 @@ class SignInWithEmailDialogState extends State<SignInWithEmailDialog> {
   _Page _page = _Page.createAccount;
 
   bool _enabled = true;
+  /// for switching show/hide password
   bool _isObscure = true;
 
   @override
@@ -106,13 +107,13 @@ class SignInWithEmailDialogState extends State<SignInWithEmailDialog> {
         TextField(
           enabled: _enabled,
           controller: _passwordController,
-          //switch show/hide password
+          ///switchs show/hide password
           obscureText: _isObscure,
           decoration: InputDecoration(
             hintText: 'Password',
             helperText: ' ',
             errorText: _passwordIssue,
-            //adds icon for swich
+            ///adds icon for switch
             suffixIcon: IconButton(
               icon: Icon(_isObscure ? Icons.visibility_off : Icons.visibility),
               onPressed: () {
@@ -166,13 +167,13 @@ class SignInWithEmailDialogState extends State<SignInWithEmailDialog> {
         TextField(
           enabled: _enabled,
           controller: _passwordController,
-          //switch show/hide password
+          ///switchs show/hide password
           obscureText: _isObscure,
           decoration: InputDecoration(
             hintText: 'Password',
             helperText: ' ',
             errorText: _passwordIssue,
-            //adds icon for swich
+            ///adds icon for switch
             suffixIcon: IconButton(
               icon: Icon(_isObscure ? Icons.visibility_off : Icons.visibility),
               onPressed: () {
@@ -323,13 +324,13 @@ class SignInWithEmailDialogState extends State<SignInWithEmailDialog> {
           enabled: _enabled,
           maxLength: widget.maxPasswordLength,
           controller: _passwordController,
-          //switch show/hide password
+          ///switchs show/hide password
           obscureText: _isObscure,
           decoration: InputDecoration(
             hintText: 'New password',
             helperText: ' ',
             errorText: _passwordIssue,
-            //adds icon for swich
+            ///adds icon for switch
             suffixIcon: IconButton(
               icon: Icon(_isObscure ? Icons.visibility_off : Icons.visibility),
               onPressed: () {
